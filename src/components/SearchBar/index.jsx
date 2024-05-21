@@ -1,8 +1,15 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Dropdown } from '../Dropdown';
 import './style.css';
 
 export const SearchBar = ({ onSearch }) => {
+  const { t, i18n } = useTranslation();
+
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+  };
+
   const [filters, setFilters] = useState({
     activities: [],
     location: [],
@@ -30,31 +37,31 @@ export const SearchBar = ({ onSearch }) => {
   return (
     <div className="search-bar-wrapper">
       <Dropdown
-        title="Activities / hobbies"
+        title={t('activitiesP')}
         options={['Outdoors', 'Art', 'Sport', 'Relax']}
         onChange={(option, checked) => handleFilterChange('activities', option, checked)}
       />
       <Dropdown
-        title="Location"
+        title={t('locationP')}
         options={['Czechia', 'Germany', 'Croatia']}
         onChange={(option, checked) => handleFilterChange('location', option, checked)}
       />
       <Dropdown
-        title="Comfort"
+        title={t('comfortP')}
         options={['Wifi', 'Pool', 'Gym']}
         onChange={(option, checked) => handleFilterChange('comfort', option, checked)}
       />
       <Dropdown
-        title="Price"
+        title={t('priceP')}
         options={['$ - Budget', '$$ - Midrange', '$$$ - Luxury']}
         onChange={(option, checked) => handleFilterChange('price', option, checked)}
       />
       <Dropdown
-        title="Rating from guests"
+        title={t('ratingP')}
         options={['5 Stars', '4 Stars', '3 Stars', '2 Stars', '1 Star']}
         onChange={(option, checked) => handleFilterChange('rating', option, checked)}
       />
-      <button className="search-button" onClick={handleSearch}>Search</button>
+      <button className="search-button" onClick={handleSearch}>{t('searchB')}</button>
     </div>
   );
 };
