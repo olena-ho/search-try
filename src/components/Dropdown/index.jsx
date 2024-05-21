@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './style.css';
 
 export const Dropdown = ({ title, options, onChange }) => {
   const [show, setShow] = useState(false);
   const [checkedOptions, setCheckedOptions] = useState({});
+  const dropdownRef = useRef(null);
 
   const toggleDropdown = () => setShow(!show);
 
@@ -17,8 +18,21 @@ export const Dropdown = ({ title, options, onChange }) => {
     setShow(false);
   };
 
+  const handleClickOutside = (event) => {
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+      setShow(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
   return (
-    <div className="dropdown-wrapper">
+    <div className="dropdown-wrapper" ref={dropdownRef}>
       <button className="dropdown-button" onClick={toggleDropdown}>
         {title} &#9662;
       </button>
@@ -32,7 +46,7 @@ export const Dropdown = ({ title, options, onChange }) => {
               onChange={handleCheckboxChange}
             />
             {option}
-            </label>
+          </label>
         ))}
         <button className="apply-button" onClick={handleApply}>Apply</button>
       </div>
