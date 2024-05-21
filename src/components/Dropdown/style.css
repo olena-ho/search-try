@@ -1,0 +1,61 @@
+.dropdown-wrapper {
+  position: relative;
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.dropdown-button {
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.dropdown-button:hover {
+  background-color: #e0e0e0;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  height: fit-content;
+  padding: 10px;
+  overflow-y: auto;
+  width: 200px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.dropdown-content.show {
+  display: block;
+}
+
+.checkbox-label {
+  display: block;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.checkbox-label:hover {
+  background-color: #f0f0f0;
+}
+
+.apply-button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #00aaff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.apply-button:hover {
+  background-color: #007acc;
+}
