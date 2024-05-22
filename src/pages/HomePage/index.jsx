@@ -1,12 +1,20 @@
 import { SearchBar } from '../../components/SearchBar';
+import Map from '../../components/Map';
 import './style.css';
 
 
 export const HomePage = () => {
   return (
-    <>
-      {/* <p>Can you see this?</p> */}
-      <SearchBar />
-    </>
+
+    <><SearchBar />
+   <div className="home-page">
+    <div className="left-content">
+    </div>
+    <div className="map-container">
+      <Map/>
+    </div>
+  </div>
+  </>
   )
 };
+
