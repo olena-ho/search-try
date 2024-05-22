@@ -1,0 +1,35 @@
+.header {
+  position: relative;
+  display: flex;
+  justify-content: end;
+  padding: 10px;
+}
+
+.language-selector {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  margin-right: 50px;
+}
+
+.flag-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: -10px;
+  background-color: white;
+  padding: 0 10px 10px;
+  z-index: 1000;
+}
+
+.dropdown-flag {
+  width: 24px; 
+  height: 24px;
+  display: block;
+  margin: 10px 0;
+  cursor: pointer;
+}
