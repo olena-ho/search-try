@@ -41,10 +41,10 @@ const [tttt] = useTranslation(["details"]);
     <div className="search-bar-wrapper">
 <div>
   {foundHotels.map((hotel) => {
-    <div>
+    return (<div key={hotel}>
       <p>{hotel}</p>
       <p>{tttt(`${hotel}.description`)}</p>
-    </div>
+    </div>)
   })}
 </div>
       <Dropdown
