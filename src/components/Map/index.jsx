@@ -15,6 +15,10 @@ const handleLoadError = (e) => {
   console.error("Error loading Google Maps", e);
 };
 
+const handleMapLoad = (map) => {
+  console.log("Map loaded successfully", map);
+};
+
 const Map = () => {
   return (
     <LoadScript googleMapsApiKey="AIzaSyBiJG97_IYoMHOFyLB-JmGfXWGQa9ocJ24"
@@ -23,7 +27,7 @@ const Map = () => {
         mapContainerStyle={containerStyle}
         center={center}
         zoom={10}
-        onLoad={handleLoadError}
+        onLoad={handleMapLoad}
       >
         { /* Add any child components or markers here */ }
       </GoogleMap>
