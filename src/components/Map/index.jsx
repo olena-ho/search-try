@@ -1,5 +1,5 @@
-import React from 'react';
-import { GoogleMap, LoadScript } from '@react-google-maps/api';
+import React, { useEffect, useState } from 'react';
+import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 
 const containerStyle = {
   width: '100%',
@@ -7,8 +7,8 @@ const containerStyle = {
 };
 
 const center = {
-  lat: -3.745,
-  lng: -38.523
+  lat: 49.5,
+  lng: 14.5
 };
 
 const handleLoadError = (e) => {
@@ -20,6 +20,12 @@ const handleMapLoad = (map) => {
 };
 
 const Map = () => {
+const [hotels, setHotels] = useState([]);
+
+useEffect(() => {
+  
+})
+
   return (
     <LoadScript googleMapsApiKey="AIzaSyBiJG97_IYoMHOFyLB-JmGfXWGQa9ocJ24"
     onError={handleLoadError}>

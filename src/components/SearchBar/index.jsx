@@ -5,6 +5,7 @@ import './style.css';
 
 export const SearchBar = ({ onSearch }) => {
   const { t, i18n } = useTranslation();
+const [tttt] = useTranslation(["details"]);
 
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
@@ -34,8 +35,18 @@ export const SearchBar = ({ onSearch }) => {
     onSearch(filters);
   };
 
+  const foundHotels = ["EquitanaHotelResort", "HotelKouty"];
+
   return (
     <div className="search-bar-wrapper">
+<div>
+  {foundHotels.map((hotel) => {
+    <div>
+      <p>{hotel}</p>
+      <p>{tttt(`${hotel}.description`)}</p>
+    </div>
+  })}
+</div>
       <Dropdown
         title={t('activitiesP')}
         options={['Outdoors', 'Art', 'Sport', 'Relax']}
