@@ -1,7 +1,7 @@
 [
   {
     "name": "Equitana Hotel Resort",
-    "activities": ["Horse-riding"],
+    "activities": ["horse-riding", "spa"],
     "address": "Martinice 1, 262 72 Březnice, Czech Republic",
     "location": {
       "latitude": 49.5791,
