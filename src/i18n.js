@@ -24,7 +24,7 @@ i18n
   .use(LanguageDetector)
   .use(initReactI18next) // passes i18n down to react-i18next
   .init({
-    fallbackLng: 'en',
+    lng: "cs",
     debug: true,
     interpolation: {
       escapeValue: false,
