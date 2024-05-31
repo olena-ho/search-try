@@ -5,6 +5,7 @@ import { App } from "./components/App";
 import { HomePage } from "./pages/HomePage";
 import './i18n';
 import './global.css';
+import { SearchResults } from "./pages/SearchResults";
 
 
 const router = createBrowserRouter([
@@ -15,6 +16,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <HomePage />,
+      },
+      {
+        path: "/search-results",
+        element: <SearchResults />,
       },
     ],
   },

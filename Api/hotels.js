@@ -13,7 +13,7 @@ const sourceOfHotels = [
       "fishing",
     ],
     address: "Martinice 1, 262 72 Březnice, Czech Republic",
-    country: "Czech Republic",
+    country: "czech republic",
     location: {
       latitude: 49.5791,
       longitude: 13.8301,
@@ -29,7 +29,7 @@ const sourceOfHotels = [
     name: "Hotel Kouty",
     activities: ["Tennis", "Beach volleyball", "Paddleboard", "Yoga"],
     address: "Zblovice 63, 675 26 Zblovice, Czech Republic",
-    country: "Czech Republic",
+    country: "czech republic",
     location: {
       latitude: 49.106,
       longitude: 15.645,
@@ -49,7 +49,7 @@ const sourceOfHotels = [
     name: "Golf Resort Olomouc",
     activities: ["golf"],
     address: "Dolany-Véska 89, 783 16 Dolany, Czech Republic",
-    country: "Czech Republic",
+    country: "czech republic",
     location: {
       latitude: 49.635,
       longitude: 17.3023,
@@ -73,7 +73,7 @@ const sourceOfHotels = [
     activities: ["Aquapark"],
     address:
       "Via Michelangelo Buonarroti, 15, 30016 Lido di Jesolo, Venice, Italy",
-    country: "Italy",
+    country: "italy",
     location: {
       latitude: 45.5128,
       longitude: 12.6446,
@@ -94,7 +94,7 @@ const sourceOfHotels = [
       "Port wine tasting",
     ],
     address: "Quinta Vale de Abraão, Samodães, 5100-758 Lamego, Portugal",
-    country: "Portugal",
+    country: "portugal",
     location: {
       latitude: 41.161,
       longitude: -7.7851,
@@ -110,7 +110,7 @@ const sourceOfHotels = [
     name: "The Boulders Resort",
     activities: ["golf", "hot air balloons", "rock climbing"],
     address: "34631 N Tom Darlington Dr, Scottsdale, AZ 85262, USA",
-    country: "United States",
+    country: "united states",
     location: {
       latitude: 33.8466,
       longitude: -111.9277,
@@ -132,7 +132,7 @@ const sourceOfHotels = [
     name: "The Residences at Chevy Chase",
     activities: ["pillow fighting"],
     address: "8551 Connecticut Ave, Chevy Chase, MD 20815, USA",
-    country: "United States",
+    country: "united states",
     location: {
       latitude: 38.9965,
       longitude: -77.069,
@@ -153,7 +153,7 @@ const sourceOfHotels = [
     name: "Loews Coronado Bay Resort",
     activities: ["surfing for dogs"],
     address: "4000 Coronado Bay Road, Coronado, CA 92118, USA",
-    country: "United States",
+    country: "united states",
     location: {
       latitude: 32.6325,
       longitude: -117.1384,
@@ -175,7 +175,7 @@ const sourceOfHotels = [
     name: "Sonesta Select Boston Lowell Chelmsford",
     activities: ["exotic menu for animals"],
     address: "30 Industrial Ave E, Lowell, MA 01852, USA",
-    country: "United States",
+    country: "united states",
     location: {
       latitude: 42.6321,
       longitude: -71.3224,
@@ -191,7 +191,7 @@ const sourceOfHotels = [
     name: "Obriy Village",
     activities: ["traditional Ukrainian hot tubs", "horse riding"],
     address: "Opishnya, Poltava region, Ukraine",
-    country: "Ukraine",
+    country: "ukraine",
     location: {
       latitude: 49.9722,
       longitude: 34.6083,
@@ -207,7 +207,7 @@ const sourceOfHotels = [
     name: "Concept Stay Sirimiri",
     activities: ["horse riding", "hot tubs"],
     address: "Yaremche, Ukraine",
-    country: "Ukraine",
+    country: "ukraine",
     location: {
       latitude: 48.4482,
       longitude: 24.5527,
@@ -229,7 +229,7 @@ const sourceOfHotels = [
       "trekking",
     ],
     address: "Chernihiv, Ukraine",
-    country: "Ukraine",
+    country: "ukraine",
     location: {
       latitude: 51.4982,
       longitude: 31.2893,
@@ -245,7 +245,7 @@ const sourceOfHotels = [
     name: "Aves Travel",
     activities: ["hot springs"],
     address: "Various locations, Ukraine",
-    country: "Ukraine",
+    country: "ukraine",
     location: {
       latitude: 48.3794,
       longitude: 31.1656,
@@ -261,7 +261,7 @@ const sourceOfHotels = [
     name: "The Manta Resort",
     activities: ["underwater hotel"],
     address: "Pemba Island, Tanzania",
-    country: "Tanzania",
+    country: "tanzania",
     location: {
       latitude: -5.235,
       longitude: 39.7763,
@@ -277,7 +277,7 @@ const sourceOfHotels = [
     name: "Poseidon Undersea Resorts",
     activities: ["underwater hotel"],
     address: "Fiji Island",
-    country: "Fiji",
+    country: "fiji",
     location: {
       latitude: -17.7134,
       longitude: 178.065,
@@ -293,7 +293,7 @@ const sourceOfHotels = [
     name: "Icehotel",
     activities: ["ice hotel"],
     address: "Marknadsvägen 63, 981 91 Jukkasjärvi, Sweden",
-    country: "Sweden",
+    country: "sweden",
     location: {
       latitude: 67.85,
       longitude: 20.6161,
@@ -309,7 +309,7 @@ const sourceOfHotels = [
     name: "Treehotel",
     activities: ["treehouses"],
     address: "Edeforsväg 2A, 960 24 Harads, Sweden",
-    country: "Sweden",
+    country: "sweden",
     location: {
       latitude: 65.8254,
       longitude: 20.9694,
@@ -325,7 +325,7 @@ const sourceOfHotels = [
     name: "Luna Salada Hotel",
     activities: ["salt hotel"],
     address: "Salar de Uyuni, Colchani, Bolivia",
-    country: "Bolivia",
+    country: "bolivia",
     location: {
       latitude: -20.1338,
       longitude: -67.4891,
@@ -341,7 +341,7 @@ const sourceOfHotels = [
     name: "Happy Guests Lodge",
     activities: ["fish companion for £5"],
     address: "Tarporley Road, Dutton, Warrington WA4 4EZ, England",
-    country: "United Kingdom",
+    country: "united kingdom",
     location: {
       latitude: 53.3,
       longitude: -2.65,
@@ -357,7 +357,7 @@ const sourceOfHotels = [
     name: "Hotel Divorce",
     activities: ["divorce hotel"],
     address: "Zeestraat 35, 2518 AA The Hague, Netherlands",
-    country: "Netherlands",
+    country: "netherlands",
     location: {
       latitude: 52.0833,
       longitude: 4.3,
@@ -374,7 +374,7 @@ const sourceOfHotels = [
     activities: ["walk with lions"],
     address:
       "25 km South of Polokwane on either the R101 or N1, Polokwane, 0700, South Africa",
-    country: "South Africa",
+    country: "south africa",
     location: {
       latitude: -23.8916,
       longitude: 29.4486,
@@ -395,7 +395,7 @@ const sourceOfHotels = [
       "shoe-shining",
     ],
     address: "Charles-Lindbergh-Platz 1, 71034 Böblingen, Germany",
-    country: "Germany",
+    country: "germany",
     location: {
       latitude: 48.681,
       longitude: 8.9999,
@@ -417,7 +417,7 @@ const sourceOfHotels = [
     name: "Masseria Cervarolo",
     activities: ["cooking classes", "themed dinner nights", "walking tours"],
     address: "SP 14 Ostuni-Martina Franca, km 4,5, 72017 Ostuni BR, Italy",
-    country: "Italy",
+    country: "italy",
     location: {
       latitude: 40.7392,
       longitude: 17.5816,
@@ -433,7 +433,7 @@ const sourceOfHotels = [
     name: "Electra Palace Hotel",
     activities: ["art exhibitions", "rooftop dining"],
     address: "9 Aristotelous Square, Thessaloniki, 546 24, Greece",
-    country: "Greece",
+    country: "greece",
     location: {
       latitude: 40.6323,
       longitude: 22.9404,
@@ -454,7 +454,7 @@ const sourceOfHotels = [
       "surfing lessons",
     ],
     address: "6000 W Osceola Pkwy, Kissimmee, FL 34746, USA",
-    country: "United States",
+    country: "united states",
     location: {
       latitude: 28.3514,
       longitude: -81.5331,

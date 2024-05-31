@@ -11,7 +11,7 @@ export const SearchBar = ({ onSearch }) => {
   };
   const [filters, setFilters] = useState({
     activities: [],
-    location: "",
+    location: [],
     comfort: [],
     price: [],
     rating: [],

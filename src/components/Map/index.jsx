@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { GoogleMap, InfoWindow, LoadScript, Marker } from '@react-google-maps/api';
-import hotels from '../../api/hotels.json';
+import sourceOfHotels from '../../../Api/hotels.js';
 
  const containerStyle = {
   width: '100%',
@@ -60,7 +60,7 @@ const Map = () => {
       >
         {currentLocation && <Marker position={currentLocation} />}
 
-{hotels.map((hotel, i) => {
+{sourceOfHotels.map((hotel, i) => {
 
 const descriptionWords = hotel.description.split(' ');
 const shortenedDescription = descriptionWords.slice(0, 9).join(' ');

@@ -59,3 +59,32 @@
 .apply-button:hover {
   background-color: #007acc;
 }
+
+.location-box {
+  display: flex;
+  flex-wrap: wrap;
+}
+.added-location-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.added-location {
+  position: relative;
+  padding: 8px 20px 8px 8px;
+  margin: 5px;
+  border: none;
+  border-radius: 4px;
+  background-color: #fff;
+  cursor: default;
+}
+
+.remove-location {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 12px;
+  color: red;
+}

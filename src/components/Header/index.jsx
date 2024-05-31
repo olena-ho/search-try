@@ -38,7 +38,9 @@ export const Header = () => {
 
   return (
     <div className="header">
+      <a href="/">
       <img src={logo} alt="logo" className="logo" />
+      </a>
       <div className="header__right">
         <div className="language-selector" onClick={toggleDropdown}>
           <img src={getCurrentFlag()} alt={currentLang} className="flag-icon" />

@@ -5,10 +5,10 @@ import Map from "../../components/Map";
 import "./style.css";
 
 export const SearchResults = () => {
-const [tttt] = useTranslation(["details"]);
+  const [tttt] = useTranslation(["details"]);
 
-  const foundHotels = ["EquitanaHotelResort", "HotelKouty"]; 
-  
+  const foundHotels = ["EquitanaHotelResort", "HotelKouty"];
+
   return (
     <>
       <SearchBar />
