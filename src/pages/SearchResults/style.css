@@ -1,0 +1,17 @@
+.search-results-container {
+  display: flex;
+  height: 100%;
+}
+
+.filters-applied {
+  flex-basis: 20%;
+  background-color: antiquewhite;
+}
+.search-cards {
+  flex-basis: 40%;
+  padding: 0 10px;
+}
+.map-container {
+  width: 100%;
+  height: 465px;
+}

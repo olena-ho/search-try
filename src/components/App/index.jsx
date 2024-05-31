@@ -6,7 +6,6 @@ export const App = () => {
   return (
     <>
       <Header />
-      {/* <p>Hello!</p> */}
       <Outlet />
     </>
   );

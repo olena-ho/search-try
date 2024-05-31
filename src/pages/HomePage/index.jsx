@@ -1,21 +1,13 @@
-import { SearchBar } from '../../components/SearchBar';
-import Map from '../../components/Map';
-import './style.css';
+import { HomeVisual } from "../../components/HomeVisual";
+import { SearchBar } from "../../components/SearchBar";
+import "./style.css";
 
 
 export const HomePage = () => {
   return (
-
-    <>
-    <SearchBar />
-   <div className="home-page">
-    <div className="left-content">
+    <div className="main-page__container">
+      <SearchBar />
+      <HomeVisual />
     </div>
-    <div className="map-container">
-      <Map/>
-    </div>
-  </div>
-  </>
-  )
+  );
 };
-

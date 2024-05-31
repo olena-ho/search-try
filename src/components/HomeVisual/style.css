@@ -1,0 +1,14 @@
+.main-page__visual {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 45px;
+}
+
+.main-page__image {
+  height: 200px;
+}
+
+.main-page__image--s {
+  height: 70px;
+}

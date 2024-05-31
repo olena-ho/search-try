@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
+import { GoogleMap, InfoWindow, LoadScript, Marker } from '@react-google-maps/api';
+import hotels from '../../api/hotels.json';
 
-const containerStyle = {
+ const containerStyle = {
   width: '100%',
   height: '100%'
-};
+}; 
 
-const center = {
+const defaultCenter = {
   lat: 49.5,
   lng: 14.5
 };
@@ -20,24 +21,73 @@ const handleMapLoad = (map) => {
 };
 
 const Map = () => {
-const [hotels, setHotels] = useState([]);
+  const [currentLocation, setCurrentLocation] = useState(null);
+  const [displayInfo, setdisplayInfo] = useState(null);
 
-useEffect(() => {
-  
-})
+  useEffect(() => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          setCurrentLocation({
+            lat: position.coords.latitude,
+            lng: position.coords.longitude,
+          });
+        },
+        (error) => {
+          console.error("Error getting user's location", error);
+          setCurrentLocation(defaultCenter);
+        }
+      );
+    } else {
+      console.error("Geolocation is not supported by this browser.");
+      setCurrentLocation(defaultCenter);
+    }
+  }, []);
+
+  const handleMarkerClick = (i) => {
+    setdisplayInfo(i);
+  };
 
   return (
+    <>
     <LoadScript googleMapsApiKey="AIzaSyBiJG97_IYoMHOFyLB-JmGfXWGQa9ocJ24"
     onError={handleLoadError}>
       <GoogleMap
         mapContainerStyle={containerStyle}
-        center={center}
+        center={currentLocation || defaultCenter}
         zoom={10}
         onLoad={handleMapLoad}
       >
-        { /* Add any child components or markers here */ }
+        {currentLocation && <Marker position={currentLocation} />}
+
+{hotels.map((hotel, i) => {
+
+const descriptionWords = hotel.description.split(' ');
+const shortenedDescription = descriptionWords.slice(0, 9).join(' ');
+
+  return(
+  <Marker
+  key={i}
+  position={{lat: hotel.location.latitude, lng: hotel.location.longitude}}
+  onClick={() => handleMarkerClick(i)}
+  >
+    {displayInfo === i && (
+      <InfoWindow onCloseClick={() => setdisplayInfo(null)}>
+<div>
+  <h3>{hotel.name}</h3>
+  <p>{`${shortenedDescription}...`}</p>
+</div>
+      </InfoWindow>
+    )}
+
+  </Marker>
+  );
+})}
+
+{currentLocation && <Marker position={currentLocation} />}
       </GoogleMap>
-    </LoadScript>
+      </LoadScript>
+      </>
   );
 };
 

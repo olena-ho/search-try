@@ -5,15 +5,15 @@
 }
 
 .dropdown-button {
-  background-color: #f0f0f0;
-  border: 1px solid #ddd;
+  background-color: #fff;
+  border: none;
   border-radius: 5px;
   padding: 10px;
   cursor: pointer;
 }
 
 .dropdown-button:hover {
-  background-color: #e0e0e0;
+  color: #00aaff;
 }
 
 .dropdown-content {
