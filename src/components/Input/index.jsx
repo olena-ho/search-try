@@ -5,25 +5,21 @@ export const Input = ({ placeholder, onChange }) => {
   const [show, setShow] = useState(false);
   const [location, setLocation] = useState([]);
   const [inputValue, setInputValue] = useState("");
-  const [userInputValue, setUserInputValue] = useState("");
+  const [userInputValue, setUserInputValue] = useState([]);
   const dropdownRef = useRef(null);
 
   const handleInputChange = (event) => {
     const value = event.target.value;
     setInputValue(value);
-    setUserInputValue(value);
     onChange(value);
   };
 
   const handleAdd = () => {
     const trimmedValue = inputValue.trim().toLowerCase();
     if (trimmedValue !== "") {
-      setLocation((prevLocations) => [
-        ...prevLocations,
-        { original: userInputValue.trim(), lowercased: trimmedValue },
-      ]);
+      setLocation((prevLocations) => [...prevLocations, trimmedValue]);
+      setUserInputValue((prevValues) => [...prevValues, inputValue]);
       setInputValue("");
-      setUserInputValue("");
     }
   };
 
@@ -36,12 +32,12 @@ export const Input = ({ placeholder, onChange }) => {
 
   const handleRemove = (index) => {
     setLocation((prevLocations) => prevLocations.filter((_, i) => i !== index));
+    setUserInputValue((prevValues) => prevValues.filter((_, i) => i !== index));
   };
 
   const handleApply = () => {
     setShow(false);
-    const inputString = location.map(loc => loc.original).join(", ");
-    // Update inputValue with the concatenated string
+    const inputString = userInputValue.join(", ");
     setInputValue(inputString);
     console.log(location);
   };
@@ -73,10 +69,10 @@ export const Input = ({ placeholder, onChange }) => {
       />
       <div className={`dropdown-content ${show ? "show" : ""}`}>
         <div className="location-box">
-          {location.map((loc, index) => (
+          {userInputValue.map((loc, index) => (
             <div key={index} className="added-location-wrapper">
               <button className="added-location">
-                {loc.original}
+                {loc}
                 <span
                   className="remove-location"
                   onClick={() => handleRemove(index)}
