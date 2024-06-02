@@ -4,6 +4,10 @@
   margin: 0 10px;
 }
 
+.dropdown-input {
+  width: 200px;
+}
+
 .dropdown-button {
   background-color: #fff;
   border: none;
@@ -14,6 +18,27 @@
 
 .dropdown-button:hover {
   color: #00aaff;
+}
+
+.autocomplete-list {
+  position: absolute;
+  background-color: white;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.autocomplete-item {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.autocomplete-item:hover {
+  background-color: #f0f0f0;
 }
 
 .dropdown-content {
@@ -64,6 +89,7 @@
   display: flex;
   flex-wrap: wrap;
 }
+
 .added-location-wrapper {
   display: flex;
   align-items: center;

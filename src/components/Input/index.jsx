@@ -1,32 +1,36 @@
 import React, { useState, useEffect, useRef } from "react";
 import "../Dropdown/style.css";
+import { countries } from "../../../Api/countries";
 
 export const Input = ({ placeholder, onChange }) => {
   const [show, setShow] = useState(false);
   const [location, setLocation] = useState([]);
   const [inputValue, setInputValue] = useState("");
   const [userInputValue, setUserInputValue] = useState([]);
+  const [showAutocomplete, setShowAutocomplete] = useState(false);
   const dropdownRef = useRef(null);
 
   const handleInputChange = (event) => {
-    const value = event.target.value;
-    setInputValue(value);
-    onChange(value);
+    setInputValue(event.target.value);
+    setShowAutocomplete(true);
+    setShow(false);
   };
 
-  const handleAdd = () => {
-    const trimmedValue = inputValue.trim().toLowerCase();
-    if (trimmedValue !== "") {
-      setLocation((prevLocations) => [...prevLocations, trimmedValue]);
-      setUserInputValue((prevValues) => [...prevValues, inputValue]);
-      setInputValue("");
-    }
+  const handleSelect = (country) => {
+    setLocation((prevLocations) => [...prevLocations, country.toLowerCase()]);
+    setUserInputValue((prevValues) => [...prevValues, country]);
+    setInputValue("");
+    setShow(true);
+    setShowAutocomplete(false);
   };
 
   const handleKeyDown = (event) => {
     if (event.key === "Enter") {
       event.preventDefault();
-      handleAdd();
+      const country = countries.find(c => c.toLowerCase() === inputValue.toLowerCase());
+      if (country) {
+        handleSelect(country);
+      }
     }
   };
 
@@ -45,6 +49,7 @@ export const Input = ({ placeholder, onChange }) => {
   const handleClickOutside = (event) => {
     if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
       setShow(false);
+      setShowAutocomplete(false);
     }
   };
 
@@ -54,6 +59,10 @@ export const Input = ({ placeholder, onChange }) => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
+
+  const filteredCountries = countries.filter((country) =>
+    country.toLowerCase().includes(inputValue.toLowerCase())
+  );
 
   return (
     <div className="dropdown-wrapper" ref={dropdownRef}>
@@ -67,6 +76,19 @@ export const Input = ({ placeholder, onChange }) => {
         onKeyDown={handleKeyDown}
         className="dropdown-button"
       />
+      {showAutocomplete && inputValue && (
+        <div className="autocomplete-list">
+          {filteredCountries.map((country, index) => (
+            <div
+              key={index}
+              className="autocomplete-item"
+              onClick={() => handleSelect(country)}
+            >
+              {country}
+            </div>
+          ))}
+        </div>
+      )}
       <div className={`dropdown-content ${show ? "show" : ""}`}>
         <div className="location-box">
           {userInputValue.map((loc, index) => (
@@ -83,9 +105,6 @@ export const Input = ({ placeholder, onChange }) => {
             </div>
           ))}
         </div>
-        <button className="apply-button" onClick={handleAdd}>
-          Add
-        </button>
         <button className="apply-button" onClick={handleApply}>
           Apply
         </button>
